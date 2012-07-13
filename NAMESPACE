@@ -1,0 +1,6 @@
+#exportPattern("^[[:alpha:]]+")
+
+export(IDI.INF, IDI.INF.OUT, IDI.INF.GRAPH)
+
+#S3method(print,idi)
+#S3method(plot,idi)
