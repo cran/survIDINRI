@@ -1,4 +1,4 @@
-c13ee3a2e81de911f6a70453a75f0ac9 *DESCRIPTION
+ace0057a092a2425ddc6a1b5cc55cbe2 *DESCRIPTION
 fd6fe145c03da8381305db55e387abdc *NAMESPACE
 751f4e70b488e1dad70922feda3861db *R/FUN-IDI-ver014.R
 a8945b6064927a18be0ee56d00ad7651 *R/zzz.R
@@ -17,6 +17,6 @@ fa5cccb7375e90fa751015d6df83d62c *man-hidden/cumsum2.Rd
 d758f534d447836423ac55d0a7c7250b *man-hidden/unoecdf.Rd
 5bf6d0c93fc5bd22fbf5f6913ef9eaf4 *man/IDI.INF.GRAPH.Rd
 be4f6ea17dccc4e5bb218e53a6da2061 *man/IDI.INF.OUT.Rd
-60e73fde4cf9c44167b8b0f9a5a3477e *man/IDI.INF.Rd
-4ae0070f86c27ce9d5f3cd5eea5eb36a *man/survIDINRI-package.Rd
+588c8f39a9a00d7142cbdf3da9bfb597 *man/IDI.INF.Rd
+04e37aa22b99e8ba0797ff8cfcd18184 *man/survIDINRI-package.Rd
 bf679d40cd3acf7ea7c8b233a3e832ec *src/unoecdfv1.f

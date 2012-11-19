@@ -10,8 +10,8 @@
 \tabular{ll}{
 Package: \tab survIDINRI\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2012-07-13\cr
+Version: \tab 1.0-2\cr
+Date: \tab 2012-11-19\cr
 License: \tab GPL-2 \cr
 }
 }
@@ -21,7 +21,7 @@ Hajime Uno, Tianxi Cai
 Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
 }
 
-%\references{}
+\references{Uno H, Tian L, Cai T, Kohane IS, Wei LJ. A unified inference procedure for a class of measures to assess improvement in risk prediction systems with survival data, Statistics in Medicine 2012. doi:10.1002/sim.5647}
 
 \keyword{IDI, NRI, survival}
 

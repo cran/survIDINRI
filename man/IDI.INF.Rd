@@ -54,7 +54,7 @@ IDI.INF(indata, covs0, covs1, t0, npert = 300, npert.rand = NULL, seed1 = NULL, 
 }
 
 \references{
-http://www.bepress.com/harvardbiostat/paper107 Harvard University Biostatistics Working Paper Series. Working Paper 107. 
+Uno H, Tian L, Cai T, Kohane IS, Wei LJ. A unified inference procedure for a class of measures to assess improvement in risk prediction systems with survival data, Statistics in Medicine 2012. doi:10.1002/sim.5647
 }
 
 %\author{Hajime Uno}
