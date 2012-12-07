@@ -34,7 +34,7 @@ IDI.INF(indata, covs0, covs1, t0, npert = 300, npert.rand = NULL, seed1 = NULL, 
 \value{
 \item{m1 }{Result of IDI. Point and corresponding (1-alpha/2) confidence interval are given
 }
-\item{m2 }{Result of continuous-NRI. Point and corresponding (1-alpha/2) confidence interval are given. Note that \code{m2} corresponds to the quantity defined as ``1/2 NRI(>0)'' in Pencina et al.(2011)
+\item{m2 }{Result of continuous-NRI. Point and corresponding (1-alpha/2) confidence interval are given. Note that this corresponds the quantity defined as ``1/2 NRI(>0)'' in Pencina et al. (2011).
 }
 \item{m3 }{Result of median improvement in risk score. Point and corresponding (1-alpha/2) confidence interval are given
 } 
@@ -53,17 +53,17 @@ IDI.INF(indata, covs0, covs1, t0, npert = 300, npert.rand = NULL, seed1 = NULL, 
 
 }
 
-\references{
-Pencina MJ, D'Agostino RB, Steyerberg EW. Extensions of net reclassification improvement calculations to measure usefulness of new biomarkers. Statistics in Medicine 2011. doi:10.1002/sim.5647
-
-Uno H, Tian L, Cai T, Kohane IS, Wei LJ. A unified inference procedure for a class of measures to assess improvement in risk prediction systems with survival data, Statistics in Medicine 2012. doi:10.1002/sim.5647
+\references{Uno H, Tian L, Cai T, Kohane IS, Wei LJ. A unified inference procedure for a class of measures to assess improvement in risk prediction systems with survival data, Statistics in Medicine 2012. doi:10.1002/sim.5647
 }
+
 
 %\author{Hajime Uno}
 
-\note{\code{m2} corresponds to the quantity defined as ``1/2 NRI(>0)'' in Pencina et al.(2011)
+\note{
+\code{m2} corresponds to the quantity defined as ``1/2 NRI(>0)'' in Pencina et al. (2011).
 
-When the base model and the new model are nested, make sure that regression coefficients for the added predictors are significantly different from 0 in the new model, before using this function.}
+When the base model and the new model are nested, make sure that regression coefficients for the added predictors are significantly different from 0 in the new model, before using this function.
+}
 
 \seealso{Papers regarding the issue on evaluating nested models:
 
@@ -78,8 +78,7 @@ Demler OV, Pencina MJ, D'Agostino RB. Misuse of DeLong test to compare AUCs for 
   #--- sample data (pbc in survival package) ---
   D=subset(pbc, select=c("time","status","age","albumin","edema","protime","bili"))
   D$status=as.numeric(D$status==2)
-  D=D[!is.na(apply(D,1,mean)),] ; dim(D)  
-  mydata=D[1:100,]
+  mydata=D[!is.na(apply(D,1,mean)),] ; dim(D)  
 
   t0=365*5
   indata1=mydata; 
@@ -88,13 +87,13 @@ Demler OV, Pencina MJ, D'Agostino RB. Misuse of DeLong test to compare AUCs for 
   covs0<-as.matrix(indata0[,c(-1,-2)])
 
   #--- inference ---
-  x<-IDI.INF(mydata[,1:2], covs0, covs1, t0, npert=200) ; 
+  x<-IDI.INF(mydata[,1:2], covs0, covs1, t0, npert=300) ; 
 
   #--- results ---
   IDI.INF.OUT(x) ;
 
   #--- Graphical presentaion of the estimates ---
-  # IDI.INF.GRAPH(x) ;
+  IDI.INF.GRAPH(x) ;
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

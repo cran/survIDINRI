@@ -10,8 +10,8 @@
 \tabular{ll}{
 Package: \tab survIDINRI\cr
 Type: \tab Package\cr
-Version: \tab 1.0-2\cr
-Date: \tab 2012-11-19\cr
+Version: \tab 1.0-3\cr
+Date: \tab 2012-12-7\cr
 License: \tab GPL-2 \cr
 }
 }
@@ -21,7 +21,11 @@ Hajime Uno, Tianxi Cai
 Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
 }
 
-\references{Uno H, Tian L, Cai T, Kohane IS, Wei LJ. A unified inference procedure for a class of measures to assess improvement in risk prediction systems with survival data, Statistics in Medicine 2012. doi:10.1002/sim.5647}
+\references{
+Pencina MJ, D'Agostino RB, Steyerberg EW. Extensions of net reclassification improvement calculations to measure usefulness of new biomarkers. Statistics in Medicine 2011. doi:10.1002/sim.5647
+
+Uno H, Tian L, Cai T, Kohane IS, Wei LJ. A unified inference procedure for a class of measures to assess improvement in risk prediction systems with survival data, Statistics in Medicine 2012. doi:10.1002/sim.5647
+}
 
 \keyword{IDI, NRI, survival}
 
@@ -32,7 +36,8 @@ Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
   #--- sample data (pbc in survival package) ---
   D=subset(pbc, select=c("time","status","age","albumin","edema","protime","bili"))
   D$status=as.numeric(D$status==2)
-  mydata=D[!is.na(apply(D,1,mean)),] ; dim(D)  
+  D=D[!is.na(apply(D,1,mean)),] ; dim(D)  
+  mydata=D[1:100,]
 
   t0=365*5
   indata1=mydata; 
@@ -41,12 +46,12 @@ Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
   covs0<-as.matrix(indata0[,c(-1,-2)])
 
   #--- inference ---
-  x<-IDI.INF(mydata[,1:2], covs0, covs1, t0, npert=300) ; 
+  x<-IDI.INF(mydata[,1:2], covs0, covs1, t0, npert=200) ; 
 
   #--- results ---
   IDI.INF.OUT(x) ;
 
   #--- Graphical presentaion of the estimates ---
-  IDI.INF.GRAPH(x) ;
+  # IDI.INF.GRAPH(x) ;
 
 }
