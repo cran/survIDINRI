@@ -1,6 +1,9 @@
 ## =================== ##
-## "FUN-IDI-ver014.R"  ##
+## "FUN-IDI-ver015.R"  ##
 ## =================== ##
+
+# ver014 -- ver015 
+# add parameter for label size --- cex.lab=NULL
 
 ## setwd("~/Dropbox/R/R-Extension/survIDINRI/distribution/ver014-survIDINRI-v1.0-1")
 
@@ -544,9 +547,9 @@ ptm <- proc.time()
 #--------------------
 
   if(!is.null(npert.rand)){
-    ptb<-PTB.IDI.FUN(indata[,1:2], covs0, covs1, t0, ft0, ft1, kmc, pest, seed1=NULL, npert.rand=npert.rand)
+    ptb<-PTB.IDI.FUN(indata[,1:2], covs0, covs1, t0, ft0, ft1, kmc, pest, seed1=seed1, npert.rand=npert.rand)
   	}else{
-    ptb<-PTB.IDI.FUN(indata[,1:2], covs0, covs1, t0, ft0, ft1, kmc, pest, seed1=NULL, npert=npert)
+    ptb<-PTB.IDI.FUN(indata[,1:2], covs0, covs1, t0, ft0, ft1, kmc, pest, seed1=seed1, npert=npert)
   		}
   }
 
@@ -605,8 +608,8 @@ proc.time()-ptm
       {polygon(c(x[i], x[i], x[i+1], x[i+1]), c(yl[i], yu[i], yu[i+1], yl[i+1]), ...)}
   }
 
-
- IDI.INF.GRAPH<-function(x,...){
+#--- ver015 -- add arguments ---
+ IDI.INF.GRAPH<-function(x, main=NULL, xlab = NULL, ylab = NULL, cex.main=NULL, cex.lab=NULL,...){
 
    cc.diff=x$point$cc
    diffs1=1-x$point$FX
@@ -631,7 +634,10 @@ proc.time()-ptm
    m0.idx<-which(abs(diffs0-0.5)==min(abs(diffs0-0.5)))
    points(cc.diff[m1.idx[1]], 0.5, col="darkgray", pch=19, cex=1.5) ;
    points(cc.diff[m0.idx[1]], 0.5, col="darkgray", pch=19, cex=1.5) ;
-   title(xlab="s", ylab=expression(paste("pr(",hat(D)<=s,")")))
+   if(is.null(xlab)){xlab="s"}
+   if(is.null(ylab)){ylab=expression(paste("pr(",hat(D)<=s,")"))}
+   title(main=main, xlab=xlab, ylab=ylab,cex.lab=cex.lab, cex.main=cex.main)
+#  title(xlab="s", ylab=expression(paste("pr(",hat(D)<=s,")")), cex.lab=cex.lab)
 
 }
 

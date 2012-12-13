@@ -1,7 +1,6 @@
-8993fed0c00ef34797ec98c83cd49416 *DESCRIPTION
-abffe7ae767462cf825273e685626fe4 *IDI.INF.Rd
+87acd8e6ad1ae20f2306dff0bcadf84f *DESCRIPTION
 fd6fe145c03da8381305db55e387abdc *NAMESPACE
-751f4e70b488e1dad70922feda3861db *R/FUN-IDI-ver014.R
+54f4d2732213036d6d5c832d0aa6026b *R/FUN-IDI-ver015.R
 a8945b6064927a18be0ee56d00ad7651 *R/zzz.R
 d965af8ba9a349bf51af54176559a36d *man-hidden/Est.HR.FUN.Rd
 f40155246642ff5e73beb0c1fd214e03 *man-hidden/Ghat.FUN.Rd
@@ -16,8 +15,8 @@ f90bdaaa46a9fb3b561c3dd132f4d913 *man-hidden/WGT.FUN.Rd
 fa5cccb7375e90fa751015d6df83d62c *man-hidden/cumsum2.Rd
 0d6a5608fc27d2aaac573346e39e2713 *man-hidden/shade.Rd
 d758f534d447836423ac55d0a7c7250b *man-hidden/unoecdf.Rd
-5bf6d0c93fc5bd22fbf5f6913ef9eaf4 *man/IDI.INF.GRAPH.Rd
+936cf5cdff2833b4a2bea8a30d6b8a0c *man/IDI.INF.GRAPH.Rd
 be4f6ea17dccc4e5bb218e53a6da2061 *man/IDI.INF.OUT.Rd
 c15617cc648ba131381ca88fba0aa221 *man/IDI.INF.Rd
-b9cfd9f55554efa17150bedacde4f957 *man/survIDINRI-package.Rd
+a16dad49cea4790a2f9cf6cd1cecde5b *man/survIDINRI-package.Rd
 bf679d40cd3acf7ea7c8b233a3e832ec *src/unoecdfv1.f
