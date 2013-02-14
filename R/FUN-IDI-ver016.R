@@ -1,9 +1,12 @@
 ## =================== ##
-## "FUN-IDI-ver015.R"  ##
+## "FUN-IDI-ver016.R"  ##
 ## =================== ##
 
 # ver014 -- ver015 
 # add parameter for label size --- cex.lab=NULL
+
+# ver015 -- ver016 
+# as.real() --> as.double()
 
 ## setwd("~/Dropbox/R/R-Extension/survIDINRI/distribution/ver014-survIDINRI-v1.0-1")
 
@@ -22,10 +25,10 @@ unoecdf <- function(cc, pdiff, wt) {
 	    out <- .Fortran("unoecdf",PACKAGE = "survIDINRI",
                 n=as.integer(length(pdiff)),
                 nc=as.integer(length(cc)),
-                score=as.real(pdiff),
-                cutoff=as.real(cc),
-                weight=as.real(wt),
-                OUTECDF=as.real(rep(0,length(cc))))
+                score=as.double(pdiff),
+                cutoff=as.double(cc),
+                weight=as.double(wt),
+                OUTECDF=as.double(rep(0,length(cc))))
         return(out)
    }
 
