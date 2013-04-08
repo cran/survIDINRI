@@ -10,8 +10,8 @@
 \tabular{ll}{
 Package: \tab survIDINRI\cr
 Type: \tab Package\cr
-Version: \tab 1.0-5\cr
-Date: \tab 2013-2-14\cr
+Version: \tab 1.1-1\cr
+Date: \tab 2013-4-8\cr
 License: \tab GPL-2 \cr
 }
 }

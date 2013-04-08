@@ -8,6 +8,9 @@
 # ver015 -- ver016 
 # as.real() --> as.double()
 
+# ver016 -- ver017 
+# IDI.INF() --> provide p-value
+
 ## setwd("~/Dropbox/R/R-Extension/survIDINRI/distribution/ver014-survIDINRI-v1.0-1")
 
 ####################################
@@ -570,10 +573,20 @@ proc.time()-ptm
   # OUTPUT
   #=================
   if(!is.null(npert) | !is.null(npert.rand)){
+
+   #--- percentile-based p-value (add ver017) ---
+    m1.p=if(pest$IDI>0){mean(ptb$PTB.IDI < 0) * 2
+    	          }else{mean(ptb$PTB.IDI > 0) * 2}
+    m2.p=if(pest$TXI>0){mean(ptb$PTB.TXI < 0) * 2
+    	          }else{mean(ptb$PTB.TXI > 0) * 2}
+    m3.p=if(pest$MED>0){mean(ptb$PTB.MED < 0) * 2
+    	          }else{mean(ptb$PTB.MED > 0) * 2}
    #--- CI ---
-    m1=c(pest$IDI, quantile(ptb$PTB.IDI, prob=c(alpha/2, 1-alpha/2))) 
-    m2=c(pest$TXI, quantile(ptb$PTB.TXI, prob=c(alpha/2, 1-alpha/2))) 
-    m3=c(pest$MED, quantile(ptb$PTB.MED, prob=c(alpha/2, 1-alpha/2))) 
+    m1=c(pest$IDI, quantile(ptb$PTB.IDI, prob=c(alpha/2, 1-alpha/2)), m1.p) 
+    m2=c(pest$TXI, quantile(ptb$PTB.TXI, prob=c(alpha/2, 1-alpha/2)), m2.p) 
+    m3=c(pest$MED, quantile(ptb$PTB.MED, prob=c(alpha/2, 1-alpha/2)), m3.p) 
+
+   
 
     z=list(m1=m1, m2=m2, m3=m3, m1.est=m1.est, m2.est=m2.est, m3.est=m3.est, point=pest)
     }else{
@@ -590,7 +603,7 @@ proc.time()-ptm
    IDI.INF.OUT<-function(x){
    	if(!is.null(x$m1)){
    	tmp=rbind(x$m1,x$m2,x$m3)
-    colnames(tmp)=c("Est.","Lower", "Upper")
+    colnames(tmp)=c("Est.","Lower", "Upper","p-value")
     rownames(tmp)=c("M1","M2","M3")
     print(round(tmp, digits=3))
    		}else{
