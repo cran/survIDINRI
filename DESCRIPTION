@@ -1,19 +1,17 @@
 Package: survIDINRI
 Type: Package
-Title: IDI and NRI for comparing competing risk prediction models with
-        censored survival data
-Version: 1.1-1
-Date: 2013-4-8
+Title: IDI and NRI for Comparing Competing Risk Prediction Models with
+        Censored Survival Data
+Version: 1.1-2
+Date: 2022-4-23
 Author: Hajime Uno, Tianxi Cai
 Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
-Depends: survival, survC1
-Description: Performs inference for a class of measures to compare
-        competing risk prediction models with censored survival data.
-        The class includes the integrated discrimination improvement
-        index (IDI) and category-less net reclassification index (NRI).
+Description: Performs inference for a class of measures to compare competing risk prediction models with censored survival data. The class includes the integrated discrimination improvement index (IDI) and category-less net reclassification index (NRI).
+Depends: survC1, survival
 License: GPL-2
+Encoding: UTF-8
 LazyLoad: yes
-Packaged: 2013-04-08 19:29:11 UTC; Hajime
 NeedsCompilation: yes
+Packaged: 2022-04-23 02:01:12 UTC; miki
 Repository: CRAN
-Date/Publication: 2013-04-08 22:18:31
+Date/Publication: 2022-04-23 07:10:02 UTC

@@ -1,6 +1,6 @@
-#exportPattern("^[[:alpha:]]+")
-
+useDynLib(survIDINRI)
 export(IDI.INF, IDI.INF.OUT, IDI.INF.GRAPH)
-
-#S3method(print,idi)
-#S3method(plot,idi)
+import(survC1)
+import(survival)
+importFrom(graphics, abline, lines, points, polygon, title)
+importFrom(stats, approx, quantile, rexp)
